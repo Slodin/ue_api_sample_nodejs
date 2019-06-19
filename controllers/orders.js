@@ -42,7 +42,7 @@ router.post('/create', function(req, res){
     // Please refer to our documentation page for more information
     var form = {
         order_type: 2,
-        start_consign : {
+        start_consignee: {
             consignee_name: '发件TEST',
             address: '出发地址',
             mobile: '1234567',
@@ -51,13 +51,6 @@ router.post('/create', function(req, res){
             lng: -123.2231,
             lat: 34.01234
         },
-        // 'start_consign.consignee_name': '发件TEST',
-        // 'start_consign.address': '出发地址',
-        // 'start_consign.mobile': '1234567',
-        // 'start_consign.sign_building': '著名景点',
-        // 'start_consign.buzz_code': '123456',
-        // 'start_consign.lng': -123.231,
-        // 'start_consign.lat': 34.01234,
         consignee: {
             consignee_name: '收件TEST',
             address: '收件人地址',

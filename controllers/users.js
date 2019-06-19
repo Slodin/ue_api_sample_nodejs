@@ -5,7 +5,7 @@ var User = require('../models/user');
 
 router.get('/oauth2', function(req, res) {
     //Example client data
-    client = {
+    let client = {
         grant_type: 'client_credentials',
         client_id: '100002',
         client_secret: 'nmTXcJNnc0r8MTWFYEJ8gKROGxuB2YiN'
@@ -17,6 +17,8 @@ router.get('/oauth2', function(req, res) {
             res.status(err.statusCode).send(JSON.parse(err.body));
             return -1;
         }
+
+        res.cookie("Authorization", "Bearer " + response.data.access_token);
         //use the response object to get your token
         //in this case, it's reponse.data.access_token
         //then you need to store this token somewhere to use it later
