@@ -58,12 +58,10 @@ However, this will set our calls to all contain the Bearer token, thus allowing 
 ### Fixing server returning 500 from POST /orders 
 In the making of this example, I have noticed POST method for /orders is returning 500. After reading the error message, it is missing a required variable named **"shipping_fee"**, this is usually calculated from calling **GET /orders/shipping_fee**. Just adding this field will enable the ability to create a new order. 
 
-> **NOTE: start_consign will return as all null, but it's not a required field, thus still able to make order with no issues**
 
     var  form  = {
 	    order_type:  2,
-	    start_consign : {
-		    //start_consign will return as all null, but it's not a required field, thus still able to make order with no issues
+	    start_consignee : {
 		    consignee_name:  '发件TEST',
 		    address:  '出发地址',
 		    mobile:  '1234567',
