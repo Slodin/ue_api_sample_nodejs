@@ -45,7 +45,7 @@ Then in your router or any other means, you can call **User.authenticate(client,
     });
 
 ### Setting auth header
-In this example, we will use a basic header to authorize our access to the API. There are serval ways to achieve this, this is only for a simple demonstration to set a global header for request. In reality this is not ideal, using cookies or web storage is much better approach.
+In this example, we will use a basic header to authorize our access to the API. There are several ways to achieve this, this is only for a simple demonstration to set a global header for request. In reality this is not ideal, using cookies or web storage is much better approach.
 
     request.defaults({
 	    headers: {
