@@ -96,12 +96,18 @@ In the making of this example, I have noticed POST method for /orders is returni
 	    shop_lat:  32.222,
 	    partner_shop_name:  '良品铺子',
 	    line_items: [
-	    {
-	    goods_name:  '商品名称',
-	    goods_number:  1,
-	    goods_price:  2.00,
-	    goods_attr:  '白色, 大号'
-	    }
+		    {
+			    goods_name:  '商品名称',
+			    goods_number:  1,
+			    goods_price:  2.00,
+			    goods_attr:  '白色, 大号'
+		    },
+		    {
+			    goods_name:  '大肉包子',
+			    goods_number:  4,
+			    goods_price:  8.00,
+			    goods_attr:  '多给醋包'
+		    }
 	    ],
 	    pay_status:  2,
 	    shop_accept:  0,
