@@ -56,3 +56,16 @@ exports.getShippingFee = function(form, cb){
         }
     })
 }
+
+exports.changeFee = function(form, cb){
+    api.baseRequest.post({
+        url: 'http://api.uniexpress.ca/orders/change_fee',
+        form
+    }, function(error, response, body){
+        if(cb){
+            //pass into callback
+            //you can use promise or async/await instead of this callback
+            cb(error, JSON.parse(body));
+        }
+    });
+}

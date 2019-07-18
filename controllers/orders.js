@@ -75,7 +75,7 @@ router.post('/create', function(req, res){
         order_amount: 0.02,
         shop_lng: -123.222,
         shop_lat: 32.222,
-        partner_shop_name: '良品铺子',
+        partner_shop_name: '测试单子',
         line_items: [
             {
                 goods_name: '商品名称',
@@ -86,12 +86,18 @@ router.post('/create', function(req, res){
         ],
         pay_status: 2,
         shop_accept: 0,
-        shipping_fee: 0.5
+        shipping_fee: 0.5,
+        task_time: '10:00',
+        task_speed: 0
     }
 
     Order.createAnOrder(form, function(err, response){
         //do your error handling and other functions if needed
-        res.send(response);
+        if(err){
+            res.status(err.statusCode).send(JSON.parse(err.body));
+            return -1;
+        }
+        res.status(200).send(response);
     });
 });
 
@@ -114,5 +120,16 @@ router.post('/get_shipping_fee', function(req, res){
          res.send(response);
     })
 })
+
+router.post('/change_fee', function(req, res){
+    var form = req.body;
+    Order.changeFee(form, function(err, response){
+        if(err){
+            res.status(err.statusCode).send(JSON.parse(err.body));
+            return -1;
+        }
+        res.status(200).send(form);
+    });
+});
 
 module.exports = router;
