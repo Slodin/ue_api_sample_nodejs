@@ -39,7 +39,7 @@ exports.createAnOrder = function(form, cb){
         if(cb){
             //pass into callback
             //you can use promise or async/await instead of this callback
-            cb(error, JSON.parse(body));
+            cb(error, body);
         }
     })
 }

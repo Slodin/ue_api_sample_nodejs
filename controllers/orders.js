@@ -91,7 +91,7 @@ router.post('/create', function(req, res){
         task_speed: 0
     }
 
-    Order.createAnOrder(form, function(err, response){
+    Order.createAnOrder(req.body, function(err, response){
         //do your error handling and other functions if needed
         if(err){
             res.status(err.statusCode).send(JSON.parse(err.body));
