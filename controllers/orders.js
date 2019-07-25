@@ -25,9 +25,7 @@ router.get('/list', function(req, res) {
 
 router.get('/list_by_id', function(req, res) {
     //Example id: use order_id not order_sn
-    var id = 108993
-
-    Order.getOrderById(id, function(err, response){
+    Order.getOrderById(req.query.id, function(err, response){
         //error handling example
         if(err){
             res.status(err.statusCode).send(JSON.parse(err.body));
